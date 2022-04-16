@@ -1,3 +1,8 @@
+#ifndef LIBSTR_FMT
+#define LIBSTR_FMT
+
+#include <string>
+
 namespace fmt {
 	std::string basename(const std::string& s){
 		return s.substr(s.find_last_of("/\\") + 1);
@@ -13,3 +18,5 @@ namespace fmt {
 		});
 	}
 }
+
+#endif

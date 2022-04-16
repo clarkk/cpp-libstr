@@ -1,5 +1,8 @@
+#ifndef LIBSTR_VAL
+#define LIBSTR_VAL
+
 #include <string>
-//#include <cstring>
+#include <cstring>
 
 namespace val {
 	bool is_digits(const char* c){
@@ -20,3 +23,5 @@ namespace val {
 		return strncmp(a, b, strlen(b)) == 0;
 	}
 }
+
+#endif
