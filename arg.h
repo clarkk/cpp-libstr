@@ -1,5 +1,4 @@
-#ifndef LIBSTR_ARG
-#define LIBSTR_ARG
+#pragma once
 
 #include <string>
 #include <stdexcept>
@@ -23,5 +22,3 @@ namespace arg {
 		return argv[++i];
 	}
 }
-
-#endif

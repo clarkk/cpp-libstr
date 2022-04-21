@@ -1,5 +1,4 @@
-#ifndef LIBSTR_VAL
-#define LIBSTR_VAL
+#pragma once
 
 #include <string>
 #include <cstring>
@@ -23,5 +22,3 @@ namespace val {
 		return strncmp(a, b, strlen(b)) == 0;
 	}
 }
-
-#endif

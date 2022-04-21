@@ -1,5 +1,4 @@
-#ifndef LIBSTR_FMT
-#define LIBSTR_FMT
+#pragma once
 
 #include <string>
 
@@ -18,5 +17,3 @@ namespace fmt {
 		});
 	}
 }
-
-#endif
