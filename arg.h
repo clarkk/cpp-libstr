@@ -2,21 +2,22 @@
 
 #include <string>
 #include <stdexcept>
+#include <string_view>
 
 namespace arg {
-	bool flag(const std::string& name, char* arg){
-		return ("-"+name == std::string(arg));
+	inline bool flag(const std::string& name, const char* arg){
+		return std::string_view(arg) == ("-"+name);
 	}
 	
-	char* argument(const std::string& name, const int& argc, char* argv[], int& i){
+	inline char* argument(const std::string& name, int argc, char* argv[], int& i){
 		if(!flag(name, argv[i])){
-			return NULL;
+			return nullptr;
 		}
 		
 		int v = i + 1;
 		
-		if(argc <= v || argv[v][0] == '-'){
-			throw std::invalid_argument("Argument '"+std::string(argv[i])+"' excepted a value");
+		if(v >= argc){
+			throw std::invalid_argument("Argument '"+std::string(argv[i])+"' expected a value");
 		}
 		
 		return argv[++i];
